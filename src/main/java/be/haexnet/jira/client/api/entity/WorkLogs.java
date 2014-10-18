@@ -10,13 +10,13 @@ public class WorkLogs {
     @JsonProperty(value = "total")
     private Long workLogCount;
     @JsonProperty(value = "worklogs")
-    private List<NewWorkLog> workLogs;
+    private List<WorkLog> workLogs;
 
     public Long getWorkLogCount() {
         return workLogCount;
     }
 
-    public List<NewWorkLog> getWorkLogs() {
+    public List<WorkLog> getWorkLogs() {
         return workLogs;
     }
 }

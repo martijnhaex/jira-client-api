@@ -5,7 +5,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
 import org.joda.time.DateTime;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class NewWorkLog {
+public class WorkLog {
     @JsonProperty
     private User author;
     @JsonProperty
