@@ -6,7 +6,6 @@ import org.junit.Test;
 import static be.haexnet.jira.client.api.IssueTracker.issueWith;
 import static org.fest.assertions.Assertions.assertThat;
 
-
 public class IssueTrackerIntegrationTest {
     @Test
     public void canTrack() throws Exception {

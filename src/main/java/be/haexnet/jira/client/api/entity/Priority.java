@@ -4,17 +4,17 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Issue {
+public class Priority {
     @JsonProperty
-    private String key;
+    private String name;
     @JsonProperty
-    private Fields fields;
+    private String iconUrl;
 
-    public String getKey() {
-        return key;
+    public String getName() {
+        return name;
     }
 
-    public Fields getFields() {
-        return fields;
+    public String getIconUrl() {
+        return iconUrl;
     }
 }
