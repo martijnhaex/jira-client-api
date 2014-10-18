@@ -1,12 +1,12 @@
 package be.haexnet.jira.client.api.manager;
 
-import be.haexnet.jira.client.api.tracker.IssueTrackerBuilder;
+import be.haexnet.jira.client.api.tracker.api.IssueTracker;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import static be.haexnet.jira.client.api.manager.JiraManager.manageJira;
-import static be.haexnet.jira.client.api.tracker.IssueTrackerBuilder.*;
+import static be.haexnet.jira.client.api.tracker.api.IssueTracker.issueWith;
 import static org.fest.assertions.Assertions.assertThat;
 
 public class JiraManagerTest {
@@ -17,7 +17,7 @@ public class JiraManagerTest {
     @Test
     public void canTrack() throws Exception {
         final String issueKey = "SPR-7624";
-        final IssueTrackerBuilder issueTracker = issueWith().issueKey(issueKey);
+        final IssueTracker issueTracker = issueWith().issueKey(issueKey);
         final String trackingUrl = manageJira().forIssue(issueTracker).track();
         assertThat(trackingUrl).isEqualTo("https://jira.spring.io/rest/api/2/issue/" + issueKey);
     }

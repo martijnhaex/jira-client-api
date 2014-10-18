@@ -1,13 +1,13 @@
-package be.haexnet.jira.client.api.tracker;
+package be.haexnet.jira.client.api.tracker.api;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import static be.haexnet.jira.client.api.tracker.IssueTrackerBuilder.issueWith;
+import static be.haexnet.jira.client.api.tracker.api.IssueTracker.issueWith;
 import static org.fest.assertions.Assertions.assertThat;
 
-public class IssueTrackerBuilderTest {
+public class IssueTrackerTest {
 
     static final String REST_ISSUE_URL = "/rest/api/2/issue/";
 

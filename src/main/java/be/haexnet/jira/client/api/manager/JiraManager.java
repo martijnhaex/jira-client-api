@@ -1,12 +1,12 @@
 package be.haexnet.jira.client.api.manager;
 
-import be.haexnet.jira.client.api.tracker.IssueTrackerBuilder;
+import be.haexnet.jira.client.api.tracker.api.Tracker;
 
 public class JiraManager {
 
     private static final String JIRA_URL = "https://jira.spring.io";
 
-    private IssueTrackerBuilder issueTracker;
+    private Tracker issueTracker;
 
     private JiraManager() {
 
@@ -16,7 +16,7 @@ public class JiraManager {
         return new JiraManager();
     }
 
-    public JiraManager forIssue(final IssueTrackerBuilder issueTracker) {
+    public JiraManager forIssue(final Tracker issueTracker) {
         this.issueTracker = issueTracker;
         return this;
     }
