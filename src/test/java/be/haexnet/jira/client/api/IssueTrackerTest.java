@@ -1,10 +1,10 @@
-package be.haexnet.jira.client.api.tracker.api;
+package be.haexnet.jira.client.api;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import static be.haexnet.jira.client.api.tracker.api.IssueTracker.issueWith;
+import static be.haexnet.jira.client.api.IssueTracker.issueWith;
 import static org.fest.assertions.Assertions.assertThat;
 
 public class IssueTrackerTest {
