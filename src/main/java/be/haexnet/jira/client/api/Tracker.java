@@ -10,7 +10,7 @@ import java.util.Optional;
 
 public abstract class Tracker<ENTITY> {
 
-    private static final String JIRA_URL = "http://jira.haexnet.be";
+    private static final String JIRA_URL = "https://jira.spring.io";
 
     public ENTITY track() {
         return new RestTemplate()
