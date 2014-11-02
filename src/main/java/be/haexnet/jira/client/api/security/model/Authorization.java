@@ -1,6 +1,6 @@
 package be.haexnet.jira.client.api.security.model;
 
-import com.sun.org.apache.xml.internal.security.utils.Base64;
+import org.apache.commons.codec.binary.Base64;
 
 public class Authorization {
     private String username;
@@ -25,6 +25,6 @@ public class Authorization {
     }
 
     public String getAuthorizationHeader() {
-        return "Basic " + new String(Base64.encode(new String(username + ":" + password).getBytes()));
+        return "Basic " + new String(Base64.encodeBase64(new String(username + ":" + password).getBytes()));
     }
 }
