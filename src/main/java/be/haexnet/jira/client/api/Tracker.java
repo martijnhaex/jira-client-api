@@ -1,26 +1,40 @@
 package be.haexnet.jira.client.api;
 
+import be.haexnet.jira.client.api.security.AuthorizationBuilder;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Optional;
+
 public abstract class Tracker<ENTITY> {
 
-    private static final String JIRA_URL = "https://jira.spring.io";
+    private static final String JIRA_URL = "http://jira.haexnet.be";
 
     public ENTITY track() {
         return new RestTemplate()
                 .exchange(
-                        JIRA_URL.concat(getRestUrl()),
+                        JIRA_URL.concat(withUrl()),
                         HttpMethod.GET,
-                        new HttpEntity<String>(new HttpHeaders()),
+                        new HttpEntity<>(createHeaders()),
                         tracksFor()
                 )
                 .getBody();
     }
 
-    public abstract String getRestUrl();
+    private HttpHeaders createHeaders() {
+        final HttpHeaders headers = new HttpHeaders();
+        if (withAuthorization().isPresent()) {
+            headers.add("Authorization", withAuthorization().get().getCredentials().getAuthorizationHeader());
+        }
+        return headers;
+    }
 
-    public abstract Class<ENTITY> tracksFor();
+    protected abstract Class<ENTITY> tracksFor();
+
+    protected abstract Optional<AuthorizationBuilder> withAuthorization();
+
+    protected abstract String withUrl();
+
 }
