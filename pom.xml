@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <spring-platform-bom.version>1.0.2.RELEASE</spring-platform-bom.version>
+        <spring-platform-bom.version>1.0.3.RELEASE</spring-platform-bom.version>
         <fest-assert.version>1.4</fest-assert.version>
     </properties>
 
